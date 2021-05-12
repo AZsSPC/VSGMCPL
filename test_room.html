@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <title>VG_GMC_PL</title>
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
+        }
+
+        body {
+            padding-top: 20px;
             background: dimgray;
         }
 
-        ul#main > li {
+        #main > * {
             display: inline-block;
             width: 70vw;
             margin: 0 13vw;
@@ -18,18 +22,58 @@
             padding: 10px;
         }
 
-        ul#main > li img {
+        #main img {
             width: 100px;
             height: 100px;
+        }
+
+        #main ::marker {
+            content: none
+        }
+
+        [who]:before {
+            border-radius: 8px;
+            background: lightskyblue;
+            padding: 2px;
+            margin-right: 4px;
+            content: attr(who) '';
+        }
+
+        #main ul {
+            padding: 0;
+            margin: 0
+        }
+
+        #main ul > li:not(:last-child) {
+            margin-bottom: 16px
         }
     </style>
 </head>
 <body>
-<ul id="main">
-    <li>
-        <img src="img_p/kikoria.png">
-        <span>Nickname: Kikoria</span>
-    </li>
-</ul>
+<div id="main">
+    <table>
+        <tr>
+            <td rowspan="2">
+                <img src="pimg/kikoria.png"></td>
+            <td>
+                <span>Nickname: Kikoria</span>
+            </td>
+        </tr>
+        <tr>
+            <td>asd</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <p class="info">huita, o huita~</p>
+                <br>
+                <ul class="comm">
+                    <li who="AZ_218">Бля, якшо б ви знали хто це..</li>
+                    <li who="AZ_218">Бля, якшо б ви знали хто це..</li>
+                    <li who="AZ_218">Бля, якшо б ви знали хто це..</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>
